@@ -1,12 +1,13 @@
 - type: entity
-  name: Neutral Rouny
+  name: Friendly NT Rouny
   id: MobXenoNeutralRouny
   parent: MobXenoRounyNPC
-  description: They mostly come at night. Mostly.
+  description: A friendly Rouny trained by Centcomm
   components:
   - type: NpcFactionMember
     factions:
-    - Passive
+    - PetsNT
+  - type: LayingDown
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/FXS/rouny.rsi
@@ -29,14 +30,15 @@
     - TauCetiBasic
 
 - type: entity
-  name: Neutral Praetorian
+  name: Friendly NT Praetorian
   id: MobXenoNeutralPraetorian
   parent: MobXenoPraetorianNPC
-  description: They mostly come at night. Mostly.
+  description: A friendly Praetorian programmed by centcomm
   components:
   - type: NpcFactionMember
     factions:
-    - Passive
+    - PetsNT
+  - type: LayingDown
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/FXS/praetorian.rsi
@@ -58,14 +60,15 @@
     - TauCetiBasic
 
 - type: entity
-  name: Neutral Drone
+  name: Friendly NT Drone
   id: MobXenoNeutralDrone
   parent: MobXenoDroneNPC
-  description: They mostly come at night. Mostly.
+  description: A friendly drone programmed by centcomm
   components:
   - type: NpcFactionMember
     factions:
-    - Passive
+    - PetsNT
+  - type: LayingDown
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/FXS/drone.rsi
@@ -87,14 +90,15 @@
     - TauCetiBasic
 
 - type: entity
-  name: Neutral Ravager
+  name: Friendly NT Ravager
   id: MobXenoNeutralRavager
   parent: MobXenoRavagerNPC
-  description: They mostly come at night. Mostly.
+  description: A friendly ravager programmed by centcomm
   components:
   - type: NpcFactionMember
     factions:
-    - Passive
+    - PetsNT
+  - type: LayingDown
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/FXS/ravager.rsi
@@ -114,6 +118,50 @@
     understands:
     - Xeno
     - TauCetiBasic
+
+- type: entity
+  name: Friendly CC Rouny
+  id: MobXenoCCNeutralRouny
+  parent: MobXenoNeutralRouny
+  description: A friendly rouny programmed by centcomm
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/FXS/CCrouny.rsi
+    scale: 0.7, 0.7
+
+- type: entity
+  name: Friendly CC Drone
+  id: MobXenoCCNeutralDrone
+  parent: MobXenoNeutralDrone
+  description: A friendly drone programmed by centcomm
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/FXS/CCdrone.rsi
+    scale: 0.7, 0.7
+
+- type: entity
+  name: Friendly CC Praetorian
+  id: MobXenoCCNeutralPraetorian
+  parent: MobXenoNeutralPraetorian
+  description: A friendly Praetorian programmed by centcomm
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/FXS/CCpraetorian.rsi
+    scale: 0.7, 0.7
+
+- type: entity
+  name: Friendly CC Ravager
+  id: MobXenoCCNeutralRavager
+  parent: MobXenoNeutralRavager
+  description: A friendly ravager programmed by centcomm
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/FXS/CCravager.rsi
+    scale: 0.7, 0.7
 
 - type: inventoryTemplate
   id: friendxeno
@@ -183,6 +231,7 @@
     interactSuccessSound:
       path: /Audio/Animals/lizard_happy.ogg
 
+# Floofstation - commented out for reasons unknown
 - type: entity
   name: Patriach
   parent: MobXenoNeutralPraetorian
@@ -354,57 +403,6 @@
     interactSuccessSound:
       path: /Audio/Animals/lizard_happy.ogg
 
-- type: entity
-  id: Cratexeno
-  parent: CratePlastic
-  name: Xeno Companion Crate
-  components:
-  - type: EntityStorage
-    airtight: false
-  - type: Sprite
-    sprite: Structures/Storage/Crates/xeno.rsi
-    layers:
-    - state: base
-    - state: closed
-      map: ["enum.StorageVisualLayers.Door"]
-    - state: paper
-      sprite: Structures/Storage/Crates/labels.rsi
-      offset: "-0.25,0.625"
-      map: ["enum.PaperLabelVisuals.Layer"]  
-  - type: Icon
-    sprite: Structures/Storage/Crates/xeno.rsi
-    state: base
-    
-- type: entity
-  id: CrateNTxenos
-  parent: Cratexeno
-  name: Xeno Companion Crate
-  description: Xeno Companion Crate
-  components:
-  - type: StorageFill
-    contents:
-      - id: DehydratedFRouny
-      - id: DehydratedFPraetorian
-      - id: DehydratedFRavager
-      - id: DehydratedFDrone
-            
-- type: entity
-  id: Giftsxenofriends
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    weight: 10
-    startDelay: 10
-    reoccurrenceDelay: 120
-    duration: 120
-    earliestStart: 10
-  - type: CargoGiftsRule
-    description: cargo-gift-friendly-xenos
-    sender: cargo-gift-nt-lab
-    dest: cargo-gift-trade-dest
-    gifts:
-      CrateNTxenos: 1
 #
 #- type: entity
 #  id: neutralXenoVents
@@ -428,45 +426,6 @@
 #      prob: 0.008
 #    - id: MobXenoNeutralRavager
 #      prob: 0.008
-
-- type: entity
-  id: ArgocyteVents
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 30
-    weight: 6 # Really weak compared to other critters
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobArgocyteSlurva
-      prob: 0.003
-    - id: MobArgocyteBarrier
-      prob: 0.001
-    - id: MobArgocyteSkitter
-      prob: 0.001
-    - id: MobArgocyteSwiper
-      prob: 0.001
-    - id: MobArgocyteMolder
-      prob: 0.001
-    - id: MobArgocytePouncer
-      prob: 0.001
-    - id: MobArgocyteGlider
-      prob: 0.001
-    - id: MobArgocyteHarvester
-      prob: 0.001
-    - id: MobArgocyteCrawler
-      prob: 0.001
-    - id: MobArgocyteEnforcer
-      prob: 0.001
-    - id: MobArgocyteFounder
-      prob: 0.001
-    - id: MobArgocyteLeviathing
-      prob: 0.0001
 #
 #- type: entity
 #  id: MeatVents
@@ -492,73 +451,6 @@
 #      prob: 0.005
 #    - id: MobAbomination
 #      prob: 0.005
-
-- type: entity
-  id: TickVents
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 1
-    weight: 6 # Really weak compared to other critters
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobTick
-      prob: 0.01
-
-- type: entity
-  id: CarpVents
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 20
-    weight: 6 # Really weak compared to other critters
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobCarp
-      prob: 0.01
-    - id: MobCarpMagic
-      prob: 0.01
-    - id: MobCarpHolo
-      prob: 0.003
-    - id: MobCarpRainbow
-      prob: 0.01
-    - id: MobShark
-      prob: 0.003
-    - id: MobCarpDragon
-      prob: 0.01
-
-- type: entity
-  id: SpaceVents
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 20
-    weight: 6 # Really weak compared to other critters
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobBearSpace
-      prob: 0.01
-    - id: MobKangarooSpace
-      prob: 0.01
-    - id: MobSpiderSpace
-      prob: 0.01
-    - id: MobCobraSpace
-      prob: 0.01
 #
 #- type: entity
 #  id: LightVents
@@ -600,348 +492,3 @@
         - MobXenoNeutralDrone
         - MobXenoNeutralRavager
       chance: 1
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieFRouny
-  name: blue rouny plush
-  description: An adorable stuffed toy that resembles a rouny with blue stripes.
-  components:
-  - type: Sprite
-    state: nrouny
-  - type: Item
-    storedRotation: -90
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: MeleeWeapon
-    wideAnimationRotation: -90
-    soundHit:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-    angle: 0
-    animation: WeaponArcBite # Rrrr!
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieFDrone
-  name: blue drone plush
-  description: An adorable stuffed toy that resembles a drone with blue stripes.
-  components:
-  - type: Sprite
-    state: ndrone
-  - type: Item
-    storedRotation: -90
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: MeleeWeapon
-    wideAnimationRotation: -90
-    soundHit:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-    angle: 0
-    animation: WeaponArcBite # Rrrr!
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieFPraetorian
-  name: blue Praetorian plush
-  description: An adorable stuffed toy that resembles a Praetorian with blue stripes.
-  components:
-  - type: Sprite
-    state: nPraetorian
-  - type: Item
-    storedRotation: -90
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: MeleeWeapon
-    wideAnimationRotation: -90
-    soundHit:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-    angle: 0
-    animation: WeaponArcBite # Rrrr!
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieFRavager
-  name: blue ravager plush
-  description: An adorable stuffed toy that resembles a ravager with blue stripes.
-  components:
-  - type: Sprite
-    state: nravager
-  - type: Item
-    storedRotation: -90
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: MeleeWeapon
-    wideAnimationRotation: -90
-    soundHit:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-    angle: 0
-    animation: WeaponArcBite # Rrrr!
-    
-- type: entity
-  parent: PlushieFRouny
-  id: DehydratedFRouny
-  name: dehydrated friendly rouny
-  description: Looks like a plush toy rouny with blue stripes, but just add water and it becomes a real-life xeno!
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      plushie:
-        maxVol: 11 # needs room for water
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-  - type: RefillableSolution
-    solution: plushie
-  - type: Reactive
-    reactions:
-    - reagents: [Water]
-      methods: [Touch, Ingestion, Injection]
-      effects:
-      - !type:AddToSolutionReaction
-        solution: plushie
-  - type: Rehydratable
-    possibleSpawns:
-    - MobXenoNeutralRouny
-  - type: CollisionWake
-    enabled: false
-  - type: Physics
-    bodyType: KinematicController
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        density: 15
-        mask:
-        - ItemMask
-      rehydrate:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        hard: false
-        layer:
-        - LowImpassable
-  # pet fish before rehydrating and he will be nice to you
-  - type: EmitSoundOnUse
-    handle: false
-    sound:
-      path: /Audio/Effects/bite.ogg
-  - type: Tag
-    tags: [] 
-
-- type: entity
-  parent: PlushieFRavager
-  id: DehydratedFRavager
-  name: dehydrated friendly ravager
-  description: Looks like a plush toy ravager with blue stripes, but just add water and it becomes a real-life xeno!
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      plushie:
-        maxVol: 11 # needs room for water
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-  - type: RefillableSolution
-    solution: plushie
-  - type: Reactive
-    reactions:
-    - reagents: [Water]
-      methods: [Touch, Ingestion, Injection]
-      effects:
-      - !type:AddToSolutionReaction
-        solution: plushie
-  - type: Rehydratable
-    possibleSpawns:
-    - MobXenoNeutralRavager
-  - type: CollisionWake
-    enabled: false
-  - type: Physics
-    bodyType: KinematicController
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        density: 15
-        mask:
-        - ItemMask
-      rehydrate:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        hard: false
-        layer:
-        - LowImpassable
-  # pet fish before rehydrating and he will be nice to you
-  - type: EmitSoundOnUse
-    handle: false
-    sound:
-      path: /Audio/Effects/bite.ogg
-  - type: Tag
-    tags: [] 
-
-- type: entity
-  parent: PlushieFDrone
-  id: DehydratedFDrone
-  name: dehydrated friendly drone
-  description: Looks like a plush toy xeno with blue stripes, but just add water and it becomes a real-life xeno!
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      plushie:
-        maxVol: 11 # needs room for water
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-  - type: RefillableSolution
-    solution: plushie
-  - type: Reactive
-    reactions:
-    - reagents: [Water]
-      methods: [Touch, Ingestion, Injection]
-      effects:
-      - !type:AddToSolutionReaction
-        solution: plushie
-  - type: Rehydratable
-    possibleSpawns:
-    - MobXenoNeutralDrone
-  - type: CollisionWake
-    enabled: false
-  - type: Physics
-    bodyType: KinematicController
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        density: 15
-        mask:
-        - ItemMask
-      rehydrate:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        hard: false
-        layer:
-        - LowImpassable
-  # pet fish before rehydrating and he will be nice to you
-  - type: EmitSoundOnUse
-    handle: false
-    sound:
-      path: /Audio/Effects/bite.ogg
-  - type: Tag
-    tags: [] 
-
-- type: entity
-  parent: PlushieFPraetorian
-  id: DehydratedFPraetorian
-  name: dehydrated friendly praetorian
-  description: Looks like a plush toy praetorian, but just add water and it becomes a real-life xeno!
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      plushie:
-        maxVol: 11 # needs room for water
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-  - type: RefillableSolution
-    solution: plushie
-  - type: Reactive
-    reactions:
-    - reagents: [Water]
-      methods: [Touch, Ingestion, Injection]
-      effects:
-      - !type:AddToSolutionReaction
-        solution: plushie
-  - type: Rehydratable
-    possibleSpawns:
-    - MobXenoNeutralPraetorian
-  - type: CollisionWake
-    enabled: false
-  - type: Physics
-    bodyType: KinematicController
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        density: 15
-        mask:
-        - ItemMask
-      rehydrate:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        hard: false
-        layer:
-        - LowImpassable
-  # pet fish before rehydrating and he will be nice to you
-  - type: EmitSoundOnUse
-    handle: false
-    sound:
-      path: /Audio/Effects/bite.ogg
-  - type: Tag
-    tags: [] 
-
