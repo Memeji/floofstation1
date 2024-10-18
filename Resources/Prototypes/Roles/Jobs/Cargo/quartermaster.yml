@@ -22,6 +22,7 @@
     #       traits:
     #         - ShadowkinBlackeye
   weight: 10
+  whitelisted: true # Frontier - Whitelist time
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain

@@ -23,9 +23,15 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<JobPrototype>> Jobs;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
         out FormattedMessage? reason, int depth = 0)
     {
         var jobs = new List<FormattedMessage>();
@@ -233,9 +239,15 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
     [DataField(required: true)]
     public ProtoId<PlayTimeTrackerPrototype> Tracker;
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
         out FormattedMessage? reason, int depth = 0)
     {
         // Disable the requirement if the role timers are disabled

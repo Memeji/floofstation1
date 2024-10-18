@@ -10,6 +10,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Consent;
 using Content.Shared.Database;
 using Content.Shared.Preferences;
+using Content.Shared.Roles;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,7 @@ using Prometheus;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using LogLevel = Robust.Shared.Log.LogLevel;
 using MSLogLevel = Microsoft.Extensions.Logging.LogLevel;
 
@@ -291,6 +293,21 @@ namespace Content.Server.Database
         /// If true, the message is "permanently dismissed" and will not be shown to the player again when they join.
         /// </param>
         Task MarkMessageAsSeen(int id, bool dismissedToo);
+
+        #endregion
+
+        #region Job Whitelists
+
+        Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+
+
+        Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default);
+        Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job);
+
+        Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job);
+        //Task AddGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole); // Frontier
+        //Task<bool> IsGhostRoleWhitelisted(Guid player, ProtoId<GhostRolePrototype> ghostRole); // Frontier
+        //Task<bool> RemoveGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole); // Frontier
 
         #endregion
     }
@@ -879,6 +896,46 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerConsentSettingsAsync(userId));
         }
+        public Task AddJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddJobWhitelist(player, job));
+        }
+        public Task<List<string>> GetJobWhitelists(Guid player, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetJobWhitelists(player, cancel));
+        }
+
+        public Task<bool> IsJobWhitelisted(Guid player, ProtoId<JobPrototype> job)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.IsJobWhitelisted(player, job));
+        }
+
+        public Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
+        }
+
+        // Frontier: ghost role DB ops
+        /*public Task AddGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddGhostRoleWhitelist(player, ghostRole));
+        }
+
+        public Task<bool> IsGhostRoleWhitelisted(Guid player, ProtoId<GhostRolePrototype> ghostRole)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.IsGhostRoleWhitelisted(player, ghostRole));
+        }
+        public Task<bool> RemoveGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveGhostRoleWhitelist(player, ghostRole));
+        }*/
 
         // Wrapper functions to run DB commands from the thread pool.
         // This will avoid SynchronizationContext capturing and avoid running CPU work on the main thread.

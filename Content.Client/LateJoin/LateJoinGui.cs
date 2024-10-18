@@ -265,15 +265,14 @@ namespace Content.Client.LateJoin
                         if (!_characterRequirements.CheckRequirementsValid(
                                 prototype.Requirements ?? new(),
                                 prototype,
-                                (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
-                                                            ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                                (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
                                 _jobRequirements.GetRawPlayTimeTrackers(),
-                                _jobRequirements.IsWhitelisted(),
+                                _jobRequirements.CheckWhitelist(prototype),
                                 prototype,
                                 _entityManager,
                                 _prototypeManager,
                                 _configManager,
-                                out var reasons))
+                                out var reasons)) // Rough draft - Need to add to Character requirements instead. Add "reason" there. || !_jobRequirements.IsAllowed(prototype, out var reason)
                         {
                             jobButton.Disabled = true;
 

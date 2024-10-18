@@ -20,14 +20,19 @@ public sealed partial class CharacterLogicAndRequirement : CharacterRequirement
     [DataField]
     public List<CharacterRequirement> Requirements { get; private set; } = new();
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
         out FormattedMessage? reason, int depth = 0)
     {
         var succeeded = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>()
-            .CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype, entityManager,
-                prototypeManager, configManager, out var reasons, depth + 1);
+            .CheckRequirementsValid(Requirements, job, profile, playTimes, whitelisted, prototype, entityManager, prototypeManager, configManager, out var reasons, depth + 1);
 
         if (reasons.Count == 0)
         {
@@ -56,9 +61,15 @@ public sealed partial class CharacterLogicOrRequirement : CharacterRequirement
     [DataField]
     public List<CharacterRequirement> Requirements { get; private set; } = new();
 
-    public override bool IsValid(JobPrototype job, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
+    public override bool IsValid(
+        JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
         out FormattedMessage? reason, int depth = 0)
     {
         var succeeded = false;

@@ -1,6 +1,7 @@
 using Content.Server.Administration;
 using Content.Server.Database;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Players.JobWhitelist; // Frontier
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Players;
@@ -14,6 +15,7 @@ namespace Content.Server.Whitelist;
 [AdminCommand(AdminFlags.Whitelist)] // DeltaV - Custom permission for whitelist
 public sealed class AddWhitelistCommand : LocalizedCommands
 {
+    [Dependency] private readonly JobWhitelistManager _jobWhitelist = default!; // Frontier
     public override string Command => "whitelistadd";
 
     public override async void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -42,6 +44,8 @@ public sealed class AddWhitelistCommand : LocalizedCommands
                 shell.WriteLine(Loc.GetString("cmd-whitelistadd-existing", ("username", data.Username)));
                 return;
             }
+
+            _jobWhitelist.AddGlobalWhitelist(guid);
 
             await db.AddToWhitelistAsync(guid);
 
@@ -74,6 +78,7 @@ public sealed class AddWhitelistCommand : LocalizedCommands
 [AdminCommand(AdminFlags.Ban), AdminCommand(AdminFlags.Whitelist)] // DeltaV - Custom permission for whitelist.
 public sealed class RemoveWhitelistCommand : LocalizedCommands
 {
+    [Dependency] private readonly JobWhitelistManager _jobWhitelist = default!; // Frontier
     public override string Command => "whitelistremove";
 
     public override async void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -102,6 +107,8 @@ public sealed class RemoveWhitelistCommand : LocalizedCommands
                 shell.WriteLine(Loc.GetString("cmd-whitelistremove-existing", ("username", data.Username)));
                 return;
             }
+
+            _jobWhitelist.RemoveGlobalWhitelist(guid);
 
             await db.RemoveFromWhitelistAsync(guid);
 
@@ -134,6 +141,7 @@ public sealed class RemoveWhitelistCommand : LocalizedCommands
 [AdminCommand(AdminFlags.Ban)]
 public sealed class KickNonWhitelistedCommand : LocalizedCommands
 {
+    [Dependency] private readonly JobWhitelistManager _jobWhitelist = default!; // Frontier
     public override string Command => "kicknonwhitelisted";
 
     public override async void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -158,6 +166,11 @@ public sealed class KickNonWhitelistedCommand : LocalizedCommands
         {
             if (await db.GetAdminDataForAsync(session.UserId) is not null)
                 continue;
+
+            if (!_jobWhitelist.IsGloballyWhitelisted(session.UserId)) // Frontier: use JobWhitelistManager as a wrapper.
+            {
+                net.DisconnectChannel(session.Channel, Loc.GetString("whitelist-not-whitelisted"));
+            }
 
             if (!await db.GetWhitelistStatusAsync(session.UserId))
             {

@@ -24,6 +24,7 @@
           species:
             - Shadowkin
   weight: 10
+  whitelisted: true # Frontier - Whitelist time
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   requireAdminNotify: true

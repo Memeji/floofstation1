@@ -21,6 +21,7 @@
     #       traits:
     #         - ShadowkinBlackeye
   weight: 10
+  whitelisted: true # Frontier - Whitelist time
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   requireAdminNotify: true

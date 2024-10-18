@@ -22,6 +22,7 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
+using Content.Server.Players.JobWhitelist;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Kitchen;
@@ -67,6 +68,7 @@ namespace Content.Server.IoC
             IoCManager.Register<DiscordAuthManager>();
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
             IoCManager.Register<ServerApi>();
+            IoCManager.Register<JobWhitelistManager>(); // Frontier Job Whitelist
         }
     }
 }

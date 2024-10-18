@@ -24,6 +24,9 @@ public sealed class UserDbDataManager
     [Dependency] private readonly IServerConsentManager _consent = default!;
 
     private readonly Dictionary<NetUserId, UserData> _users = new();
+    private readonly List<OnLoadPlayer> _onLoadPlayer = [];
+    private readonly List<OnFinishLoad> _onFinishLoad = [];
+    private readonly List<OnPlayerDisconnect> _onPlayerDisconnect = [];
 
     // TODO: Ideally connected/disconnected would be subscribed to IPlayerManager directly,
     // but this runs into ordering issues with game ticker.
@@ -75,5 +78,26 @@ public sealed class UserDbDataManager
         return _users[session.UserId].Task;
     }
 
+    public void AddOnLoadPlayer(OnLoadPlayer action)
+    {
+        _onLoadPlayer.Add(action);
+    }
+
+    public void AddOnFinishLoad(OnFinishLoad action)
+    {
+        _onFinishLoad.Add(action);
+    }
+
+    public void AddOnPlayerDisconnect(OnPlayerDisconnect action)
+    {
+        _onPlayerDisconnect.Add(action);
+    }
+
     private sealed record UserData(CancellationTokenSource Cancel, Task Task);
+
+    public delegate Task OnLoadPlayer(ICommonSession player, CancellationToken cancel);
+
+    public delegate void OnFinishLoad(ICommonSession player);
+
+    public delegate void OnPlayerDisconnect(ICommonSession player);
 }

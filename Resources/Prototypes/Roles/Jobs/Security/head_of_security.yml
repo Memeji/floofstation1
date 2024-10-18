@@ -19,6 +19,7 @@
     #       traits:
     #         - ShadowkinBlackeye
   weight: 10
+  whitelisted: true # Frontier - Whitelist time
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true

@@ -709,12 +709,12 @@ namespace Content.Client.Preferences.UI
                         job,
                         Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                         _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
+                        _requirements.CheckWhitelist(job), //IsWhitelisted(),
                         job,
                         _entityManager,
                         _prototypeManager,
                         _configurationManager,
-                        out var reasons))
+                        out var reasons)) // || !_requirements.IsAllowed(job, out var reason)
                         selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
 
                     category.AddChild(selector);
