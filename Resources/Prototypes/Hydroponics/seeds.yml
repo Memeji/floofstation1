@@ -7,6 +7,8 @@
   packetPrototype: WheatSeeds
   productPrototypes:
     - WheatBushel
+  mutationPrototypes:
+    - meatwheat
   lifespan: 25
   maturation: 6
   production: 3
@@ -145,6 +147,8 @@
   packetPrototype: LaughinPeaSeeds
   productPrototypes:
     - FoodLaughinPeaPod
+  mutationPrototypes:
+    - worldPea
   lifespan: 25
   growthStages: 3
   maturation: 7
@@ -258,6 +262,8 @@
   packetPrototype: OrangeSeeds
   productPrototypes:
     - FoodOrange
+  mutationPrototypes:
+    - extradimensionalOrange
   harvestRepeat: Repeat
   lifespan: 55
   maturation: 6
@@ -341,6 +347,8 @@
   packetPrototype: SugarcaneSeeds
   productPrototypes:
     - Sugarcane
+  mutationPrototypes:
+    - papercane
   harvestRepeat: Repeat
   lifespan: 60
   maturation: 6
@@ -479,6 +487,8 @@
   packetPrototype: BloodTomatoSeeds
   productPrototypes:
     - FoodBloodTomato
+  mutationPrototypes:
+    - killertomato
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 8
@@ -592,6 +602,8 @@
   packetPrototype: AppleSeeds
   productPrototypes:
     - FoodApple
+  mutationPrototypes:
+    - goldenApple
   harvestRepeat: Repeat
   lifespan: 55
   maturation: 6
@@ -761,6 +773,8 @@
   packetPrototype: CannabisSeeds
   productPrototypes:
     - LeavesCannabis
+  mutationPrototypes:
+    - rainbowCannabis
   harvestRepeat: Repeat
   lifespan: 75
   maturation: 8
@@ -868,6 +882,7 @@
     - FoodChili
   mutationPrototypes:
     - chilly
+    - GhostPepper #Delta-V
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 6
@@ -1139,6 +1154,9 @@
   packetPrototype: GalaxythistleSeeds
   productPrototypes:
     - FoodGalaxythistle
+  mutationPrototypes:
+    - CrystalThistle #Delta-V, replaces glasstle
+    - glasstle  #Floof - Added glasstle too
   lifespan: 25
   maturation: 10
   production: 3
@@ -1188,6 +1206,9 @@
   packetPrototype: GatfruitSeeds
   productPrototypes:
     - FoodGatfruit
+  mutationPrototypes:
+    - fakeCapfruit
+    - realCapfruit
   lifespan: 65
   maturation: 25
   production: 25
@@ -1345,6 +1366,8 @@
   packetPrototype: WatermelonSeeds
   productPrototypes:
     - FoodWatermelon
+  mutationPrototypes:
+    - holymelon
   lifespan: 55
   maturation: 12
   production: 3
@@ -1488,6 +1511,8 @@
   packetPrototype: PumpkinSeeds
   productPrototypes:
     - FoodPumpkin
+  mutationPrototypes:
+    - bluePumpkin
   lifespan: 55
   maturation: 10
   production: 4
@@ -1514,6 +1539,8 @@
   packetPrototype: CottonSeeds
   productPrototypes:
     - CottonBol
+  mutationPrototypes:
+    - pyrotton
   lifespan: 25
   maturation: 8
   production: 3
