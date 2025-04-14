@@ -151,3 +151,8 @@
       Min: 1
       Max: 4
       PotencyDivisor: 5
+
+# Bees
+# Coal, iron, quartz, gold, etc.
+# Cannot get seeds from the plants themselves (maybe?)
+# Honeycombs for reagent types? Which CAN have seeds.
