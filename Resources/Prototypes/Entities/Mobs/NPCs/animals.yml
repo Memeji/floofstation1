@@ -134,7 +134,7 @@
     - Passive
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: BeeApiaryCompound
   - type: Extractable # DeltaV - Make it so bees can be ground up
     grindableSolutionName: bee
   - type: SolutionContainerManager
