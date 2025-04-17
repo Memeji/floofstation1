@@ -4006,3 +4006,132 @@ Entries:
   id: 435
   time: '2025-04-14T07:48:46.0000000+00:00'
   url: https://github.com/Fansana/floofstation1/pull/656
+- author: M3739
+  changes:
+    - type: Tweak
+      message: Loadout options have been revised, primarily in the security department.
+    - type: Tweak
+      message: Traits such as Red Shirt have been revised.
+    - type: Add
+      message: The prison guard now has it's own load out tab.
+  id: 436
+  time: '2025-04-14T21:31:10.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/690
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Most melee weapons should no longer have their attack rates inverted.
+    - type: Fix
+      message: Loneop and unknown shuttle events should now work correctly.
+    - type: Fix
+      message: >-
+        Tail thumps and crew monitor alerts now have correct sound positioning
+        and lower volume.
+  id: 437
+  time: '2025-04-14T21:47:47.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/767
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Translators should now correctly use power when activated.
+  id: 438
+  time: '2025-04-15T13:46:57.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/772
+- author: VividPups
+  changes:
+    - type: Tweak
+      message: Mining drills no longer cost stamina
+  id: 439
+  time: '2025-04-15T13:47:27.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/771
+- author: M3739
+  changes:
+    - type: Add
+      message: Space Law, and the Justice department now have a guidebook entry.
+    - type: Add
+      message: >-
+        Hyperlink books are added to allow for more seamless and less disruptive
+        way of referring back to our wiki resources. Using these hyperlink books
+        will open the corresponding wiki page in your default browser.
+    - type: Add
+      message: PDAs now have a slot for a single hyperlink book.
+    - type: Tweak
+      message: Loadouts and lockers have been adjusted with the aforementioned in mind.
+  id: 440
+  time: '2025-04-15T18:56:57.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/607
+- author: Carlen White
+  changes:
+    - type: Fix
+      message: >-
+        Refined Diamond can now be loaded into lathes, allowing you to finally
+        make diamond tipped drills
+  id: 441
+  time: '2025-04-15T23:12:36.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/768
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Damage that targets all limbs (spacing, heat, immovable rods) should now
+        deal 10 times less damage to each limb, as intended.
+  id: 442
+  time: '2025-04-16T00:29:46.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/775
+- author: ApolloVector
+  changes:
+    - type: Tweak
+      message: Unathi can now have hair and facial hair.
+  id: 443
+  time: '2025-04-16T00:30:54.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/770
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: >-
+        Genetic and virology labcoats, winter coats, and winter boots are now
+        available for medical staff.
+    - type: Add
+      message: Chemists can now start with their winter coats and boots.
+    - type: Add
+      message: Senior physicians have a number of new loadout options.
+    - type: Add
+      message: Paramedics can now start with their winter coats and EMT belt.
+    - type: Add
+      message: Corpsmen can now start with a medical HUD and a surgical duffel bag.
+    - type: Tweak
+      message: >-
+        Doctors can now start with a surgical duffel in addition to their chosen
+        bag instead of replacing it. You will have to re-select the loadout.
+  id: 444
+  time: '2025-04-16T00:32:37.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/748
+- author: M3739
+  changes:
+    - type: Add
+      message: >-
+        The AAC tablet from Delta-V, has been added. It is also a loadout option
+        for mutes, under Items.
+    - type: Fix
+      message: >-
+        The 'Muted' trait description has been corrected to reflect it's
+        intended function. Remember to pick up either an AAC or sign language!
+  id: 445
+  time: '2025-04-16T00:34:47.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/701
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Removed the duplicate CJ job from the command department.
+  id: 446
+  time: '2025-04-16T00:36:52.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/773
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        LawDrobe now requires justice access, allowing both attorneys and
+        prosecutors to use it.
+  id: 447
+  time: '2025-04-16T00:37:59.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/774
