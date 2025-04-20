@@ -4135,3 +4135,232 @@ Entries:
   id: 447
   time: '2025-04-16T00:37:59.0000000+00:00'
   url: https://github.com/Fansana/floofstation1/pull/774
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Fixed Toolshed commands crashing the server.
+  id: 448
+  time: '2025-04-17T00:32:55.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/779
+- author: VividPups
+  changes:
+    - type: Tweak
+      message: 'it''s now worth doing the Diamond bounty '
+  id: 449
+  time: '2025-04-17T17:02:17.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/782
+- author: Forzii and Rosycup
+  changes:
+    - type: Add
+      message: Added a clicker item.
+    - type: Add
+      message: Added a colorable catsuit variant in the loadouts.
+  id: 450
+  time: '2025-04-17T17:04:12.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/760
+- author: Fansana
+  changes:
+    - type: Fix
+      message: Supermatter's guide has a name now
+  id: 451
+  time: '2025-04-18T08:32:43.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/792
+- author: Fansana
+  changes:
+    - type: Fix
+      message: >-
+        Remove a filthy, dirty, lie that has ruined the dreams of many
+        spessmans.
+  id: 452
+  time: '2025-04-18T08:33:29.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/793
+- author: EinsteinEngines
+  changes:
+    - type: Tweak
+      message: You can no longer cocoon yourself as a spider.
+  id: 453
+  time: '2025-04-18T10:39:16.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/791
+- author: Forzii
+  changes:
+    - type: Fix
+      message: Fixed heavy attack damage at full or mostly-full stamina
+  id: 454
+  time: '2025-04-18T12:23:12.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/777
+- author: WhiteHusky
+  changes:
+    - type: Add
+      message: Envelopes can now be crafted using paper.
+  id: 455
+  time: '2025-04-18T12:29:03.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/794
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: >-
+        Added new admin commands AddRandomPsionicPower, RemovePsionicPower, and
+        RemoveAllPsionicPowers.
+  id: 456
+  time: '2025-04-18T12:50:45.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/789
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: Borgs can now use IPC emote
+    - type: Add
+      message: All species missing sounds for vocal emotes have generic sounds
+    - type: Tweak
+      message: Emote Icons resprited in the style of twemoji
+    - type: Fix
+      message: '*flips *spins *jumps emotes now work'
+    - type: Fix
+      message: Emote wheel now shows the right emotes for your species
+  id: 457
+  time: '2025-04-18T12:51:19.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/790
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: CPR now automatically repeats itself.
+    - type: Add
+      message: >-
+        CPR no longer requires you to take the mask off. You can now simply
+        lower it instead.
+    - type: Fix
+      message: Fixed CPR repeating popups x100 times.
+  id: 458
+  time: '2025-04-18T12:51:56.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/797
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: White cane added to loadout options
+  id: 459
+  time: '2025-04-18T12:51:39.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/796
+- author: M3739
+  changes:
+    - type: Fix
+      message: >-
+        The Syndicate has avoided declaring Chapter 11. The Elite Syndicate
+        hardsuit's base price is now 11 telecrystals instead of 1.
+  id: 460
+  time: '2025-04-19T03:08:03.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/802
+- author: Forzii
+  changes:
+    - type: Fix
+      message: >-
+        The Space Villain arcade machines have had the gum removed from their
+        buttons.
+  id: 461
+  time: '2025-04-19T03:11:41.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/799
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: >-
+        Loadout equipment, such as trash bags and weapons, will no longer
+        replace items in slots they can fit in.
+  id: 462
+  time: '2025-04-19T03:13:16.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/795
+- author: ApolloVector
+  changes:
+    - type: Tweak
+      message: Added warning in space medipen description
+  id: 463
+  time: '2025-04-19T03:17:14.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/778
+- author: Forzii
+  changes:
+    - type: Fix
+      message: >-
+        Paramedic and courier doors and windoors should now have the proper
+        access instead of AA
+  id: 464
+  time: '2025-04-19T03:14:58.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/784
+- author: Forzii
+  changes:
+    - type: Fix
+      message: >-
+        French accents no longer reveal the secrets of
+        accent-french-words-replace-26.
+  id: 465
+  time: '2025-04-19T03:16:01.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/785
+- author: WhiteHusky
+  changes:
+    - type: Fix
+      message: Security PDA has SecWatch back
+  id: 466
+  time: '2025-04-19T05:48:23.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/804
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: 'Added the GR4YT1D3 Virus event. '
+  id: 467
+  time: '2025-04-19T13:29:04.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/807
+- author: EinsteinEngines
+  changes:
+    - type: Fix
+      message: Fix Shiva's name and description displaying improperly in ghost roles
+  id: 468
+  time: '2025-04-19T14:03:41.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/812
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: Face markings are now in their own category
+    - type: Fix
+      message: IPC screens no longer show up above hair
+  id: 469
+  time: '2025-04-19T16:27:27.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/806
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: >-
+        Lots of refactoring of the Mob State Systerm in preparation for
+        implementing a much more detailed Soft Critical state.
+  id: 470
+  time: '2025-04-19T16:29:32.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/814
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: >-
+        Added religious neckwear to loadouts, such as Crucifix (with a colorable
+        option), Scapular and Tallit.
+    - type: Tweak
+      message: Added the gay male pride pin to loadouts and the Pride-O-Mat.
+  id: 471
+  time: '2025-04-19T16:30:29.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/816
+- author: EinsteinEngines Spatison
+  changes:
+    - type: Add
+      message: Constructs now turn into the ectoplasm on their death.
+    - type: Tweak
+      message: >-
+        Blood cult stun and shadow shackles are now auras similar to blood
+        rites.
+    - type: Fix
+      message: Cult constructs now understand eldritch language and can speak it.
+    - type: Fix
+      message: Cult constructs are now healed by pylon.
+    - type: Fix
+      message: Cult constructs now has cult cult icon.
+    - type: Fix
+      message: 'All cult auras can no longer be stored, transferred or dropped. '
+    - type: Fix
+      message: Blood spear now detaches itself on recall action.
+    - type: Fix
+      message: Shadow shackles should now properly work.
+  id: 472
+  time: '2025-04-19T16:31:21.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/818
