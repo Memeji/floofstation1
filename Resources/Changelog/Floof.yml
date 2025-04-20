@@ -4364,3 +4364,171 @@ Entries:
   id: 472
   time: '2025-04-19T16:31:21.0000000+00:00'
   url: https://github.com/Fansana/floofstation1/pull/818
+- author: Forzii
+  changes:
+    - type: Tweak
+      message: >-
+        Check-out interaction should no longer alert everyone nearby that some
+        ogling is going on.
+  id: 473
+  time: '2025-04-20T06:23:04.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/832
+- author: EinsteinEngines
+  changes:
+    - type: Fix
+      message: Fixed a ton of languages missing chat names.
+    - type: Fix
+      message: Fixed a ton of markings missing names.
+  id: 474
+  time: '2025-04-20T06:43:50.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/815
+- author: EinsteinEngines
+  changes:
+    - type: Add
+      message: >-
+        Lamia have been added to the game as a new playable species! They are
+        currently extremely buggy, and so are by default disabled as a
+        roundstart species. To enable them for (Buggy) playtesting, go to
+        /Species/lamia.yml, and set roundstart to true.
+  id: 475
+  time: '2025-04-20T06:49:45.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/817
+- author: EinsteinEngines
+  changes:
+    - type: Fix
+      message: Ifrit name and description now show up properly in ghost roles
+  id: 476
+  time: '2025-04-20T14:39:26.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/821
+- author: EinsteinEngines
+  changes:
+    - type: Tweak
+      message: >-
+        Vacsuits now weigh 68kg instead of 5kg. This matters for Space Wind
+        being a lot less likely to throw them at people.
+    - type: Tweak
+      message: >-
+        Hardsuits and Tacsuits now weigh 100kg instead of 5kg. Also for space
+        wind. They deal 30 damage on throw collision, so it's pretty important
+        that space wind needs a lot of oomph to throw them across the room.
+  id: 477
+  time: '2025-04-20T14:43:09.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/822
+- author: Wizden
+  changes:
+    - type: Fix
+      message: >-
+        Your suit sensors and tracking implant no longer result in you being
+        duplicated on the crew monitors.
+  id: 478
+  time: '2025-04-20T18:01:29.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/788
+- author: WhiteHusky
+  changes:
+    - type: Fix
+      message: Mailing Unit UI is now fixed
+    - type: Fix
+      message: Mailing Units' no longer use the wrong sprite when charging
+    - type: Tweak
+      message: Mailing Units clear target on send or selecting the same target
+  id: 479
+  time: '2025-04-20T18:15:43.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/831
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: Senior physician loadouts moved to the senior physician loadout tab.
+  id: 480
+  time: '2025-04-20T18:16:25.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/830
+- author: EinsteinEngines Mike32oz
+  changes:
+    - type: Fix
+      message: Warden has a shotgun in the locker.
+    - type: Remove
+      message: AI, AI/cyborgs upload, and laws cards.
+  id: 481
+  time: '2025-04-20T18:18:48.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/823
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Senior roles can be selected with ID computers and agent IDs.
+  id: 482
+  time: '2025-04-20T18:29:59.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/828
+- author: Memeji
+  changes:
+    - type: Add
+      message: Added a paintbrush to loadouts and the artistic toolbox and crate.
+  id: 483
+  time: '2025-04-20T18:51:25.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/769
+- author: WhiteLightningTwister
+  changes:
+    - type: Tweak
+      message: shifts the salvage docking area to the side.
+    - type: Tweak
+      message: altered the maints area behind the HOP's office.
+    - type: Tweak
+      message: cyro is improved.
+    - type: Tweak
+      message: old dorms is now part of hydro.
+    - type: Tweak
+      message: moved the spare captain id to the bridge.
+    - type: Tweak
+      message: >-
+        did alot of decal work on the station to improve the visuals of the
+        station.
+    - type: Add
+      message: station is dirtier.
+    - type: Add
+      message: reworked EVAC area entirely. It also includes some of the court area.
+    - type: Add
+      message: new dorms.
+  id: 484
+  time: '2025-04-20T18:53:55.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/743
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: DND Shuttle
+    - type: Add
+      message: Civilian shuttle 01
+    - type: Add
+      message: Civilian shuttle 02
+    - type: Add
+      message: NT Envoy ship
+  id: 485
+  time: '2025-04-20T18:55:42.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/747
+- author: WhiteHusky
+  changes:
+    - type: Add
+      message: Autodoc can now be upgraded
+  id: 486
+  time: '2025-04-20T19:08:51.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/776
+- author: EinsteinEngines Skubman
+  changes:
+    - type: Add
+      message: >-
+        Lamiae can now be male, no longer being a female-only species. They can
+        now wear facial hair as well.
+    - type: Add
+      message: >-
+        The Lamia species can now select markings above the leg, including
+        cybernetics, makeup, tattoos, noses, earrings, heterochromia, bracelets,
+        reptilian horns and frills, pointy ears, and more!
+    - type: Fix
+      message: Added text for the Lamia tail marking.
+  id: 487
+  time: '2025-04-20T19:33:55.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/826
+- author: faefyr
+  changes:
+    - type: Add
+      message: New hairstyle and antenna head marking.
+  id: 488
+  time: '2025-04-20T19:38:17.0000000+00:00'
+  url: https://github.com/Fansana/floofstation1/pull/765
