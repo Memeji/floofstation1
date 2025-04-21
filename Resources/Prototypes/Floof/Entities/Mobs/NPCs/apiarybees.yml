@@ -1,0 +1,70 @@
+# - type: entity
+#   name: busy bee
+#   parent: [ SimpleMobBase, FlyingMobBase ]
+#   id: MobApiaryBee
+#   description: Nice to have, but you can't build a civilization on a foundation of honey alone.
+#   components:
+#   - type: CombatMode
+#   - type: MovementSpeedModifier # Based on modifiers
+#     baseWalkSpeed : 7
+#     baseSprintSpeed : 7
+#   - type: Sprite
+#     drawdepth: Mobs
+#     layers:
+#     - map: ["enum.DamageStateVisualLayers.Base"]
+#       state: 0
+#       sprite: Floof/Mobs/Animals/apiary_bees.rsi
+#   - type: Fixtures
+#     fixtures:
+#       fix1:
+#         shape:
+#           !type:PhysShapeCircle
+#           radius: 0.5
+#         density: 0.5
+#         mask:
+#         - FlyingMobMask
+#         layer:
+#         - FlyingMobLayer
+#   - type: MobState
+#   - type: MobThresholds # Based on modifiers
+#     thresholds:
+#       0: Alive
+#       10: Dead
+#   - type: Stamina
+#     critThreshold: 10
+#   - type: DamageStateVisuals # Based on modifiers
+#     states:
+#       Alive:
+#         Base: 0
+#       Dead:
+#         Base: dead
+#   - type: Item
+#     size: Normal
+#   - type: Tag
+#     tags:
+#     - Bee
+#     - Trash
+#   - type: Bloodstream
+#     bloodMaxVolume: 0.1
+#   - type: MobPrice
+#     price: 250 # Changes based on modifiers
+#   - type: NPCRetaliation
+#   - type: FactionException
+#   - type: NpcFactionMember
+#     factions:
+#     - Passive
+#   - type: HTN
+#     rootTask:
+#       task: SimpleHostileCompound
+#   - type: Extractable # DeltaV - Make it so bees can be ground up
+#     grindableSolutionName: bee
+#   - type: SolutionContainerManager
+#     solutions:
+#       bee:
+#         reagents:
+#         - ReagentId: GroundBee
+#           Quantity: 5
+#   - type: ZombieImmune
+#   - type: RandomBark
+#     barkType: bee
+#     barkMultiplier: 1.5

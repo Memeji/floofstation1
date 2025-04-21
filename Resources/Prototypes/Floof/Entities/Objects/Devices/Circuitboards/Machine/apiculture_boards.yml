@@ -1,0 +1,20 @@
+- type: entity
+  id: BeeApiaryMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: apiary machine board
+  description: A machine printed circuit board for an apiary.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: BeeApiary
+      requirements:
+        Manipulator: 1
+        MatterBin: 3
+      materialRequirements:
+        # apiary 
+        WoodPlank: 3
+    - type: ReverseEngineering
+      difficulty: 2
+      recipes:
+        - BeeApiaryMachineCircuitboard

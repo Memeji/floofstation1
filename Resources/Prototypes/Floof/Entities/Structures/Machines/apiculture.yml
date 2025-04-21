@@ -1,0 +1,40 @@
+- type: entity
+  id: BeeApiary
+  name: apiary
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  description: Where the busy-bees live.
+  components:
+  - type: Sprite
+    sprite: Floof/Structures/apiary.rsi
+    snapCardinals: true
+    layers:
+    - state: apiary-off
+    # - state: apiary-unlit
+    #   shader: unshaded
+    #   map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Appearance
+  # - type: GenericVisualizer
+  #   visuals:
+  #     enum.PowerDeviceVisuals.Powered:
+  #       enum.PowerDeviceVisualLayers.Powered:
+  #         True: { visible: true }
+  #         False: { visible: false }
+  # - type: SeedExtractor
+  - type: Machine
+    board: BeeApiaryMachineCircuitboard
+  # - type: UpgradePowerDraw
+  #   powerDrawMultiplier: 0.75
+  #   scaling: Exponential
