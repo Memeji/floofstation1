@@ -4,6 +4,15 @@
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   description: Where the busy-bees live.
   components:
+  - type: ActivatableUI
+    key: enum.ApiaryUiKey.Key
+    requireHands: false
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.ApiaryUiKey.Key:
+        type: ApiaryBoundUserInterface
+  - type: Apiary
   - type: Sprite
     sprite: Floof/Structures/apiary.rsi
     snapCardinals: true

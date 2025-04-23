@@ -1,0 +1,34 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                MinSize="100 150"
+                Title="{Loc 'apiary-bound-user-interface-title'}">
+
+     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+         <BoxContainer Margin="10 10 10 10" MinWidth="150" Orientation="Vertical" VerticalExpand="True" SizeFlagsStretchRatio="1"></BoxContainer>
+
+         <BoxContainer Orientation="Vertical">
+             <Label Name="ProgressLabel"></Label>
+             <ProgressBar
+                 Name="ProgressBar"
+                 Value="0.5"
+                 MinValue="0"
+                 MaxValue="1"
+                 SetHeight="20">
+             </ProgressBar>
+             <Label Name="TotalProgressLabel"></Label>
+             <ProgressBar
+                 Name="TotalProgressBar"
+                 MinValue="0"
+                 MaxValue="1"
+                 SetHeight="20">
+             </ProgressBar>
+         </BoxContainer>
+     </BoxContainer>
+
+     <!-- bee icon -->
+     <!-- progresbar -->
+     <!-- icon -->
+     <!-- Button to extract honey combs -->
+</controls:FancyWindow>
