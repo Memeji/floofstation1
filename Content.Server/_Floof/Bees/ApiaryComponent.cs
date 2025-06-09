@@ -1,4 +1,4 @@
-namespace Content.Server.FloofStation.Bees;
+namespace Content.Server._Floof.Bees;
 
 
 [RegisterComponent]
