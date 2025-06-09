@@ -14,7 +14,7 @@
         type: ApiaryBoundUserInterface
   - type: Apiary
   - type: Sprite
-    sprite: Floof/Structures/apiary.rsi
+    sprite: _Floof/Structures/apiary.rsi
     snapCardinals: true
     layers:
     - state: apiary-off
