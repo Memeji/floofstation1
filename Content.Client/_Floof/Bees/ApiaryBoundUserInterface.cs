@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
 
-namespace Content.Client.Floofstation.Bees
+namespace Content.Client._Floof.Bees
 {
     /// <summary>
     /// Initializes a <see cref="ApiaryWindow"/> and updates it when new server messages are received.

@@ -2,7 +2,7 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
 
-namespace Content.Client.Floofstation.Bees;
+namespace Content.Client._Floof.Bees;
 
 
 public sealed partial class ApiaryWindow : FancyWindow
