@@ -24,6 +24,10 @@
                  MaxValue="1"
                  SetHeight="20">
              </ProgressBar>
+
+             <Button Name="BeeButton"
+                Text="TEST"
+                StyleClasses="ButtonBig"/>
          </BoxContainer>
      </BoxContainer>
 

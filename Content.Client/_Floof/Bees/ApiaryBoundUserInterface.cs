@@ -1,6 +1,7 @@
 
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 
 
 namespace Content.Client._Floof.Bees
@@ -16,6 +17,10 @@ namespace Content.Client._Floof.Bees
 
         public ApiaryBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
+            
+
+
+
         }
 
         protected override void Open()
