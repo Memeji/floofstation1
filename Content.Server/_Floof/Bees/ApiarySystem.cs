@@ -1,5 +1,11 @@
+using Content.Server.Advertise.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Shared._Floof.Bees;
+using Content.Shared.Throwing;
+using Content.Shared.VendingMachines;
 using Robust.Shared.Containers;
+using System;
+using System.Numerics;
 
 
 namespace Content.Server._Floof.Bees;
@@ -27,5 +33,54 @@ public sealed class ApiarySystem : EntitySystem
     public void OnBeeMessage<BeeMessage>(Entity<ApiaryComponent> ent, ref BeeMessage msg)
     {
         _sawmill.Log(LogLevel.Info, "buzz");
+
+        TryCreateBee(ent);
+
+    }
+
+    public void TryCreateBee(EntityUid uid, ApiaryComponent? apiComponent = null)
+    {
+        if (!Resolve(uid, ref apiComponent))
+            return;
+
+        if (apiComponent.Ejecting || !this.IsPowered(uid, EntityManager))
+        {
+            return;
+        }
+
+        // Start Ejecting and prevent spam.
+        apiComponent.Ejecting = true; //Creating Bee
+        apiComponent.NextBeeToEject = "MobBee"; //Next Bee to Eject.
+    }
+
+    private void EjectBee(EntityUid uid, ApiaryComponent? apiComponent = null)
+    {
+        if (!Resolve(uid, ref apiComponent))
+            return;
+
+        var ent = Spawn(apiComponent.NextBeeToEject, Transform(uid).Coordinates);
+
+        apiComponent.NextBeeToEject = null;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<ApiaryComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (comp.Ejecting)
+            {
+                comp.EjectAccumulator += frameTime;
+                if (comp.EjectAccumulator >= comp.EjectDelay)
+                {
+                    comp.EjectAccumulator = 0f;
+                    comp.Ejecting = false;
+
+                    EjectBee(uid, comp);
+                }
+            }
+        }
     }
 }
